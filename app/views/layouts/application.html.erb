@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+
+    <div class='main-wrapper'>
+      <div class='container'>
+        <%= render 'layouts/flash_messages' %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

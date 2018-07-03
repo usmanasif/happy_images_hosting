@@ -1,0 +1,26 @@
+<div class='col-sm-6 col-md-4'>
+  <div class='thumbnail'>
+    <%= link_to image_tag(image.file.url(:medium), class: 'img-resize'), image.file.url(:medium), data: { lightbox: image.file_file_name, title: image.file_file_name } %>
+
+    <div class='caption m-t-md'>
+      <p class='text-center'>
+        <%= link_to '#', class: 'btn btn-default', data: { toggle: 'modal', target: "#edit-image-form-#{image.id}" } do %>
+          <i class='fa fa-pencil'></i> Edit
+        <% end %>
+
+        <%= link_to image, method: :delete, class: 'btn btn-danger', data: { confirm: 'You sure?' } do %>
+          <i class='fa fa-trash'></i> Delete
+        <% end %>
+      </p>
+
+      <p>
+        <%= text_field_tag :image_url, image_url(image), class: 'image-url-field copy-text-field' %>
+        <%= button_tag type: :button, class: 'copy-text btn btn-success', data: { url: image_url(image) } do %>
+          <i class='fa fa-copy'></i> Copy URL
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= render 'edit_image_modal_form', image: image %>

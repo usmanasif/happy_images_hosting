@@ -12,15 +12,21 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    @image = @gallery.images.find(params[:id])
+
+    if @image.present?
+      @image.destroy
+      flash[:notice] = 'Image have been deleted from your gallery successfully.'
+    else
+      flash[:alert] = "You don't have permissions to perform this action."
+    end
+
+    redirect_to root_path
   end
 
   private
     def gallery_params
-      params.fetch(:gallery).permit(images_attributes: [:id, :file, :_destroy])
-    end
-
-    def image_params
-      params.fetch(:image).permit(:file)
+      params.fetch(:gallery).permit(images_attributes: [:file, :_destroy])
     end
 
     def set_gallery

@@ -9,17 +9,19 @@
       <%= nested_form_for gallery, url: bulk_create_images_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
         <div class='modal-body'>
           <%= f.fields_for :images do |image_form| %>
-            <div class='row'>
-              <div class='col-lg-4 col-lg-offset-3'>
-                <%= image_form.file_field :file, class: 'm-b-md' %>
-              </div>
+            <% if image_form.object.new_record? %>
+              <div class='row'>
+                <div class='col-lg-4 col-lg-offset-3'>
+                  <%= image_form.file_field :file, class: 'm-b-md' %>
+                </div>
 
-              <div class='col-lg-2 text-center'>
-                <%= image_form.link_to_remove do %>
-                  <i class='fa fa-trash btn btn-danger btn-sm'></i>
-                <% end %>
+                <div class='col-lg-2 text-center'>
+                  <%= image_form.link_to_remove do %>
+                    <i class='fa fa-trash btn btn-danger btn-sm'></i>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
 
           <div class='text-center'>

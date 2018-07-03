@@ -6,10 +6,6 @@
   </div>
 </div>
 
-<div class='row'>
-  <div class='col-lg-6 col-centered text-center'>
-    <h5>No images in your gallery.</h5>
-  </div>
-</div>
+<%= render 'images', gallery: @gallery %>
 
 <%= render 'bulk_images_modal_form', gallery: @gallery %>

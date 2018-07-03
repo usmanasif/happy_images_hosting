@@ -17,4 +17,5 @@
 //= require bootstrap-sprockets
 //= require jquery_nested_form
 //= require toastr
+//= require lightbox
 //= require_tree .

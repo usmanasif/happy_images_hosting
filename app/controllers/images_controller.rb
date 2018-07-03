@@ -12,6 +12,11 @@ class ImagesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @image = Image.find(params[:id])
+    render layout: false
+  end
+
   def update
     if @image.update(image_params)
       flash[:notice] = 'Image have been updated successfully.'

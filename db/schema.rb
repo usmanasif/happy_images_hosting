@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703081243) do
+ActiveRecord::Schema.define(version: 20180703084120) do
 
   create_table "galleries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ip_address", limit: 20, null: false
@@ -18,4 +18,16 @@ ActiveRecord::Schema.define(version: 20180703081243) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "gallery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.index ["gallery_id"], name: "index_images_on_gallery_id"
+  end
+
+  add_foreign_key "images", "galleries"
 end

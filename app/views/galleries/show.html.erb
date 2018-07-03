@@ -1,6 +1,6 @@
 <div class='row m-b-lg m-t-md'>
   <div class='col-lg-6 col-centered text-center'>
-    <%= link_to '#', class: 'btn btn-success' do %>
+    <%= link_to '#', class: 'btn btn-success', data: { toggle: 'modal', target: '#image-form' } do %>
       <i class='fa fa-upload'></i> Upload Images
     <% end %>
   </div>
@@ -11,3 +11,5 @@
     <h5>No images in your gallery.</h5>
   </div>
 </div>
+
+<%= render 'bulk_images_modal_form', gallery: @gallery %>

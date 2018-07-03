@@ -1,0 +1,42 @@
+<div id='image-form' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+        <h4 class='modal-title text-center'>Images Upload Form</h4>
+      </div>
+
+      <%= nested_form_for gallery, url: bulk_create_images_path, html: { multipart: true, class: 'form-horizontal' } do |f| %>
+        <div class='modal-body'>
+          <%= f.fields_for :images do |image_form| %>
+            <div class='row'>
+              <div class='col-lg-4 col-lg-offset-3'>
+                <%= image_form.file_field :file, class: 'm-b-md' %>
+              </div>
+
+              <div class='col-lg-2 text-center'>
+                <%= image_form.link_to_remove do %>
+                  <i class='fa fa-trash btn btn-danger btn-sm'></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class='text-center'>
+            <div class='row'>
+              <div class='col-lg-12'>
+                <%= f.link_to_add :images, class: 'btn btn-info' do %>
+                  <i class='fa fa-plus'></i> Add image
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='modal-footer text-center'>
+          <%= f.submit 'Save Images', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703134622) do
+ActiveRecord::Schema.define(version: 20180703140432) do
 
   create_table "galleries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "ip_address", limit: 20, null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180703134622) do
     t.string "file_content_type"
     t.integer "file_file_size"
     t.datetime "file_updated_at"
+    t.string "code", limit: 50, null: false
     t.index ["gallery_id"], name: "index_images_on_gallery_id"
   end
 

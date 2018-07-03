@@ -21,7 +21,7 @@
       </p>
 
       <p class='text-center'>
-        <%= text_field_tag :image_url, image_url(image), class: 'image-url-field copy-text-field' %>
+        <%= text_field_tag :image_url, image_url(image.code), class: 'image-url-field copy-text-field' %>
         <%= button_tag type: :button, class: 'copy-text btn btn-success', data: { url: image_url(image) } do %>
           <i class='fa fa-copy'></i> Copy URL
         <% end %>

@@ -15,4 +15,11 @@ class Image < ApplicationRecord
                          message: 'file type is not allowed (only jpg/png/gif images)'
                        },
                        size: { in: 0..250.kilobytes }
+
+  before_create :set_code
+
+  private
+    def set_code
+      self.code = Digest::SHA1.hexdigest SecureRandom.rand(1000).to_s
+    end
 end

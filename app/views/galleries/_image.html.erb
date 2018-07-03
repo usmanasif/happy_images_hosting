@@ -4,7 +4,14 @@
 
     <div class='caption m-t-md'>
       <p class='text-center'>
-        <%= link_to '#', class: 'btn btn-default', data: { toggle: 'modal', target: "#edit-image-form-#{image.id}" } do %>
+        <%= button_tag type: :button, class: 'btn btn-default' do %>
+          <i class='fa fa-eye'></i>
+          <span class='label label-info'><%= image.impressionist_count(filter: :ip_address) %></span>
+        <% end %>
+      </p>
+
+      <p class='text-center'>
+        <%= link_to '#', class: 'btn btn-primary', data: { toggle: 'modal', target: "#edit-image-form-#{image.id}" } do %>
           <i class='fa fa-pencil'></i> Edit
         <% end %>
 
@@ -13,7 +20,7 @@
         <% end %>
       </p>
 
-      <p>
+      <p class='text-center'>
         <%= text_field_tag :image_url, image_url(image), class: 'image-url-field copy-text-field' %>
         <%= button_tag type: :button, class: 'copy-text btn btn-success', data: { url: image_url(image) } do %>
           <i class='fa fa-copy'></i> Copy URL

@@ -33,6 +33,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'awesome_print'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'impressionist'
 gem 'lightbox2-rails'
 gem 'paperclip', '~> 6.0.0'
 gem 'nested_form'

@@ -1,4 +1,6 @@
 class Image < ApplicationRecord
+  is_impressionable
+
   belongs_to :gallery
 
   has_attached_file :file,

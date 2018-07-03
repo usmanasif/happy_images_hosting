@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_gallery
   before_action :set_image, only: [:update, :destroy]
+  impressionist actions: [:show]
 
   def bulk_create
     if @gallery.update(gallery_params)

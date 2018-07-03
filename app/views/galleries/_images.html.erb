@@ -9,7 +9,7 @@
 
               <div class='caption m-t-md'>
                 <p class='text-center'>
-                  <%= link_to image, class: 'btn btn-default' do %>
+                  <%= link_to '#', class: 'btn btn-default', data: { toggle: 'modal', target: "#edit-image-form-#{image.id}" } do %>
                     <i class='fa fa-pencil'></i> Edit
                   <% end %>
 
@@ -20,6 +20,8 @@
               </div>
             </div>
           </div>
+
+          <%= render 'edit_image_modal_form', image: image %>
         <% end %>
       </div>
     <% else %>

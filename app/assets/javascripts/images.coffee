@@ -8,6 +8,7 @@ bind_dropzone = ->
   Dropzone.autoDiscover = false
 
   dropzone = new Dropzone('.dropzone',
+    maxFiles: 1
     uploadMultiple: false
     parallelUploads: 1
     maxFilesize: 0.256

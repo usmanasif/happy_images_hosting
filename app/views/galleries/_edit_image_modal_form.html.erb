@@ -6,19 +6,23 @@
         <h4 class='modal-title text-center'>Image Edit Form</h4>
       </div>
 
-      <%= form_for image, html: { multipart: true, class: 'form-horizontal' } do |f| %>
-        <div class='modal-body'>
-          <div class='row'>
-            <div class='col-lg-4 col-centered'>
-              <%= f.file_field :file, class: 'm-b-md' %>
-            </div>
+      <div class='modal-body'>
+        <div class='row'>
+          <div class='col-lg-4 col-centered'>
+            <%= render 'images/form', image: image %>
           </div>
         </div>
+      </div>
 
-        <div class='modal-footer text-center'>
-          <%= f.submit 'Update Image', class: 'btn btn-primary' %>
+      <div class='modal-footer text-center'>
+        <div class='row m-b-lg m-t-md'>
+          <div class='col-lg-6 col-centered text-center'>
+            <%= link_to '#', id: 'upload-btn', class: 'btn btn-success', data: { toggle: 'modal', target: '#image-form' } do %>
+              <i class='fa fa-upload'></i> Upload Image
+            <% end %>
+          </div>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

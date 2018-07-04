@@ -11,7 +11,7 @@
       </p>
 
       <p class='text-center'>
-        <%= link_to '#', class: 'btn btn-primary', data: { toggle: 'modal', target: "#edit-image-form-#{image.id}" } do %>
+        <%= link_to edit_image_path(image), class: 'btn btn-primary' do %>
           <i class='fa fa-pencil'></i> Edit
         <% end %>
 

@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_gallery
-  before_action :set_image, only: [:update, :destroy]
+  before_action :set_image, only: [:edit, :update, :destroy]
   impressionist actions: [:show]
 
   def bulk_create
@@ -18,6 +18,9 @@ class ImagesController < ApplicationController
     impressionist(@image)
 
     render layout: false
+  end
+
+  def edit
   end
 
   def create
@@ -39,12 +42,13 @@ class ImagesController < ApplicationController
       flash[:alert] = "You don't have permissions to perform this action."
     end
 
-    redirect_to root_path
+    render json: {}, status: :ok
   end
 
   def destroy
     if @image.present?
       @image.destroy
+
       flash[:notice] = 'Image have been deleted from your gallery successfully.'
     else
       flash[:alert] = "You don't have permissions to perform this action."

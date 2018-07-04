@@ -8,6 +8,7 @@ bind_dropzone = ->
   Dropzone.autoDiscover = false
 
   dropzone = new Dropzone('.dropzone',
+    uploadMultiple: false
     parallelUploads: 1
     maxFilesize: 0.256
     paramName: 'image[file]'
@@ -15,7 +16,6 @@ bind_dropzone = ->
     autoProcessQueue: false)
   dropzone.on 'success', (file) ->
     @removeFile file
-    console.log 123
     window.location.href = '/'
 
   $('body').on 'click', '#upload-btn', ->

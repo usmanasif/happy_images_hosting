@@ -32,6 +32,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'awesome_print'
 gem 'bootstrap-sass'
+gem 'dropzonejs-rails'
 gem 'font-awesome-rails'
 gem 'impressionist'
 gem 'lightbox2-rails'

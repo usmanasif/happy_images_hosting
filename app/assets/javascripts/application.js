@@ -18,4 +18,5 @@
 //= require jquery_nested_form
 //= require toastr
 //= require lightbox
+//= require dropzone
 //= require_tree .

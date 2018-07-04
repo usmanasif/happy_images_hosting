@@ -69,6 +69,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    dropzonejs-rails (0.8.2)
+      rails (> 3.1)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -210,6 +212,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  dropzonejs-rails
   font-awesome-rails
   impressionist
   jbuilder (~> 2.5)

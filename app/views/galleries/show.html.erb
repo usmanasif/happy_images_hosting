@@ -1,6 +1,8 @@
+<%= render 'images/form', image: @gallery.images.build %>
+
 <div class='row m-b-lg m-t-md'>
   <div class='col-lg-6 col-centered text-center'>
-    <%= link_to '#', class: 'btn btn-success', data: { toggle: 'modal', target: '#image-form' } do %>
+    <%= link_to '#', id: 'upload-btn', class: 'btn btn-success', data: { toggle: 'modal', target: '#image-form' } do %>
       <i class='fa fa-upload'></i> Upload Images
     <% end %>
   </div>
@@ -8,4 +10,3 @@
 
 <%= render 'images', gallery: @gallery %>
 
-<%= render 'bulk_images_modal_form', gallery: @gallery %>

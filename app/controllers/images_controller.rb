@@ -20,6 +20,18 @@ class ImagesController < ApplicationController
     render layout: false
   end
 
+  def create
+    @image = @gallery.images.new(image_params)
+
+    if @image.save
+      flash[:notice] = 'Image have been added in your gallery successfully.'
+    else
+      flash[:alert] = "You don't have permissions to perform this action."
+    end
+
+    render json: {}, status: :ok
+  end
+
   def update
     if @image.update(image_params)
       flash[:notice] = 'Image have been updated successfully.'

@@ -1,9 +1,13 @@
+<div class='file-head'>
+  <h1>Please, edit your file here!</h1>
+</div>
+
 <%= render 'images/form', image: @image %>
 
 <div class='row m-b-lg m-t-md'>
   <div class='col-lg-6 col-centered text-center'>
-    <%= link_to '#', id: 'upload-btn', class: 'btn btn-success', data: { toggle: 'modal', target: '#image-form' } do %>
-      <i class='fa fa-upload'></i> Update Image
+    <%= link_to '#', id: 'upload-btn', class: 'file-upload-btn', data: { toggle: 'modal', target: '#image-form' } do %>
+      Update Image
     <% end %>
   </div>
 </div>

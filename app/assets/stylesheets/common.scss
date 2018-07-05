@@ -20,3 +20,28 @@
   z-index: -1;
   position: absolute;
 }
+
+.dropzone {
+  border: 2px solid #1D5F9B;
+  position: relative;
+  border-radius: 8px;
+  margin: 0 auto 22px;
+  background: #FEFEF6;
+  display: block;
+  text-align: center;
+  min-width: 313px;
+  min-height: 196px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-brand {
+  img {
+    margin: -15px 0;
+  }
+}
+
+.custom-width {
+  width: 313px !important;
+  margin: 0 auto;
+}

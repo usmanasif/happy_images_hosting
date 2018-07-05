@@ -25,7 +25,17 @@ bind_dropzone = ->
   $('body').on 'click', '#upload-btn', ->
     dropzone.processQueue()
 
+change_dropzone_html = ->
+  $('.dz-message').html('
+    <div class="drag-text">
+      <h3>Drag or Drop Image</h3>
+      <span>Or</span>
+      <a href="#">Click to Upload</a>
+    </div>
+  ')
+
 $ ->
   lightbox.init()
   bind_copy_text()
   bind_dropzone()
+  change_dropzone_html()

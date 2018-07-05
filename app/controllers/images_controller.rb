@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
 
   def bulk_create
     if @gallery.update(gallery_params)
-      flash[:notice] = 'Images have been saved in your gallery successfully.'
+      flash[:notice] = 'Images has been saved in your gallery successfully.'
     else
       flash[:alert] = @gallery.errors.full_messages.uniq.to_sentence
     end
@@ -27,7 +27,7 @@ class ImagesController < ApplicationController
     @image = @gallery.images.new(image_params)
 
     if @image.save
-      flash[:notice] = 'Image have been added in your gallery successfully.'
+      flash[:notice] = 'Image has been added in your gallery successfully.'
     else
       flash[:alert] = "You don't have permissions to perform this action."
     end
@@ -37,7 +37,7 @@ class ImagesController < ApplicationController
 
   def update
     if @image.update(image_params)
-      flash[:notice] = 'Image have been updated successfully.'
+      flash[:notice] = 'Image has been updated successfully.'
     else
       flash[:alert] = "You don't have permissions to perform this action."
     end
@@ -49,7 +49,7 @@ class ImagesController < ApplicationController
     if @image.present?
       @image.destroy
 
-      flash[:notice] = 'Image have been deleted from your gallery successfully.'
+      flash[:notice] = 'Image has been deleted from your gallery successfully.'
     else
       flash[:alert] = "You don't have permissions to perform this action."
     end

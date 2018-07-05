@@ -1,13 +1,13 @@
-<div class='row'>
-  <div class='col-lg-12 text-center'>
-    <% if gallery.images.select(&:persisted?).present? %>
-      <div class='row'>
-        <% gallery.images.each do |image| next if image.new_record? %>
-          <%= render 'image', image: image %>
-        <% end %>
-      </div>
-    <% else %>
-      <h5>No images in your gallery.</h5>
-    <% end %>
-  </div>
+<div class='gallery-block'>
+  <h2>Image Gallery</h2>
+
+  <% if gallery.images.select(&:persisted?).present? %>
+    <ul class='gallery-list'>
+      <% gallery.images.each do |image| next if image.new_record? %>
+        <li><%= render 'image', image: image %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h5>No images in your gallery.</h5>
+  <% end %>
 </div>

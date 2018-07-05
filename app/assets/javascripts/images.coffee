@@ -4,6 +4,11 @@ bind_copy_text = ->
     $(text_field).select()
     document.execCommand 'copy'
 
+bind_copy_url = ->
+  $('body').on 'click', '#copy-url', ->
+    $(this).select()
+    document.execCommand 'copy'
+
 bind_dropzone = ->
   Dropzone.autoDiscover = false
 
@@ -39,3 +44,4 @@ $ ->
   bind_copy_text()
   bind_dropzone()
   change_dropzone_html()
+  bind_copy_url()

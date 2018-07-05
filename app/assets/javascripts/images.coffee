@@ -14,7 +14,10 @@ bind_dropzone = ->
     maxFilesize: 0.256
     paramName: 'image[file]'
     addRemoveLinks: false
-    autoProcessQueue: false)
+    autoProcessQueue: false
+    acceptedFiles: '.jpg, .jpeg, .png, .gif'
+  )
+
   dropzone.on 'success', (file) ->
     @removeFile file
     window.location.href = '/'
